@@ -1,5 +1,5 @@
 """
-PyAudio v0.2.11: Python Bindings for PortAudio.
+PyAudio v0.2.11: Python2 and Python3 Bindings for PortAudio on ManyLinux, OS X, and Windows.
 
 Copyright (c) 2006 Hubert Pham
 
