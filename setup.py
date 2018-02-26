@@ -103,21 +103,26 @@ else:
         # JACK, since that's common today.
         extra_link_args += ['-lasound', '-ljack']
 
-setup(name='PyAudio',
-      version=__version__,
-      author="Hubert Pham",
-      url="http://people.csail.mit.edu/hubert/pyaudio/",
-      description='PortAudio Python Bindings',
-      long_description=__doc__.lstrip(),
-      scripts=scripts,
-      py_modules=['pyaudio'],
-      package_dir={'': 'src'},
-      ext_modules=[
-    Extension('_portaudio',
-              sources=pyaudio_module_sources,
-              include_dirs=include_dirs,
-              define_macros=defines,
-              libraries=external_libraries,
-              extra_compile_args=extra_compile_args,
-              extra_link_args=extra_link_args)
-    ])
+extension_module = Extension(
+    '_portaudio',
+    sources=pyaudio_module_sources,
+    include_dirs=include_dirs,
+    define_macros=defines,
+    libraries=external_libraries,
+    extra_compile_args=extra_compile_args,
+    extra_link_args=extra_link_args
+    )
+
+setup(
+    name='PyAudio3',
+    version=__version__,
+    author="Hubert Pham",
+    url="http://people.csail.mit.edu/hubert/pyaudio/",
+    description='PortAudio Python Bindings',
+    long_description=__doc__.lstrip(),
+    scripts=scripts,
+    py_modules=['pyaudio'],
+    package_dir={'': 'src'},
+    ext_modules=[extension_module]
+    )
+
