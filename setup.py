@@ -115,11 +115,11 @@ setup(name='PyAudio',
       py_modules=['pyaudio'],
       package_dir={'': 'src'},
       ext_modules=[
-    Extension('_portaudio',
-              sources=pyaudio_module_sources,
-              include_dirs=include_dirs,
-              define_macros=defines,
-              libraries=external_libraries,
-              extra_compile_args=extra_compile_args,
-              extra_link_args=extra_link_args)
-    ])
+          Extension('_portaudio',
+                    sources=pyaudio_module_sources,
+                    include_dirs=include_dirs,
+                    define_macros=defines,
+                    libraries=external_libraries,
+                    extra_compile_args=extra_compile_args,
+                    extra_link_args=extra_link_args)
+          ])
