@@ -1,5 +1,5 @@
 """
-PyAudio v0.2.11: Python Bindings for PortAudio.
+PyAudio v0.2.11: Python2 and Python3 Bindings for PortAudio on ManyLinux, OS X, and Windows.
 
 Copyright (c) 2006 Hubert Pham
 
@@ -29,6 +29,7 @@ USE OR OTHER DEALINGS IN THE SOFTWARE.
 import os
 import platform
 import sys
+
 try:
     from setuptools import setup, Extension
 except ImportError:
@@ -102,6 +103,7 @@ else:
         # sure to specify the desired ones here.  Start with ALSA and
         # JACK, since that's common today.
         extra_link_args += ['-lasound', '-ljack']
+
 
 setup(name='PyAudio',
       version=__version__,
